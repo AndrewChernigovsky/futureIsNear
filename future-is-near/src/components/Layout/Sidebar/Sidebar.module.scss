@@ -1,0 +1,9 @@
+.sidebar {
+  border: 1px solid black;
+  background: aliceblue;
+  border-radius: 10px;
+
+  &__wrapper {
+    padding: 10px;
+  }
+}
