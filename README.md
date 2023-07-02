@@ -1,5 +1,5 @@
 # structure project
-root
---components
---other details
---app (only pages)
+root <br>
+--components <br>
+--other details <br>
+--app (only pages) <br>
