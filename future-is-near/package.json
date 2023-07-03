@@ -1,15 +1,14 @@
 {
-		"name": "future-is-near",
-		"version": "0.1.0",
-		"private": true,
-		"scripts": {
+	"name": "future-is-near",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint"
 	},
-		"dependencies": {
-		"@nextui-org/react": "^1.0.0-beta.13",
+	"dependencies": {
 		"@types/node": "20.3.3",
 		"@types/react": "18.2.14",
 		"@types/react-dom": "18.2.6",

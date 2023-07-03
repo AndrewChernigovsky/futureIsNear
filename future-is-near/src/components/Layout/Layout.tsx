@@ -11,20 +11,21 @@ interface ILayout {
 
 const Layout: FC<ILayout> = ({ children, showSidebar }) => {
   return (
-    <div className={styles.layout}>
-      <Header />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          gap: "5px",
-          marginTop: "10px",
-        }}
-      >
-        {showSidebar ? <Sidebar /> : <></>}
-        {children}
-      </div>
-    </div>
+		<div className={styles.layout}>
+			<Header />
+			<div
+				style={{
+					display: 'flex',
+					justifyContent: 'space-between',
+					gap: '5px',
+					marginTop: '10px',
+				}}
+				className={styles.container}
+			>
+				{showSidebar ? <Sidebar /> : <></>}
+				{children}
+			</div>
+		</div>
   );
 };
 
