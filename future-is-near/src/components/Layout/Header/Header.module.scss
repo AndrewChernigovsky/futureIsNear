@@ -1,0 +1,49 @@
+@import './../../variables.scss';
+
+.header {
+	padding: 10px 40px;
+}
+
+.nav {
+	padding: 10px 10px;
+	display: grid;
+
+	@media  screen and (min-width: $middle) {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__list,
+	&__auth {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: 20px;
+
+		li:not(:first-of-type) a {
+			color: $blue;
+
+			@media  screen and (min-width: $middle) {
+				margin-left: 20px;
+			}
+		}
+
+		@media  screen and (min-width: $middle) {
+			display: flex;
+			justify-content: flex-start;
+		}
+
+	}
+
+	&__list {
+		margin-bottom: 10px;
+	}
+
+	&__btn {
+		width: 40px;
+		height: 40px;
+		background-color: $blue;
+		cursor: pointer;
+	}
+}

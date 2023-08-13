@@ -3,6 +3,8 @@ import styles from "./Layout.module.scss";
 
 import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 import Header from "@/components/Layout/Header/Header";
+import Footer from '@/components/Layout/Footer/Footer';
+
 
 interface ILayout {
   children: ReactNode;
@@ -11,20 +13,13 @@ interface ILayout {
 
 const Layout: FC<ILayout> = ({ children, showSidebar }) => {
   return (
-		<div className={styles.layout}>
+		<div className={styles.container}>
 			<Header />
-			<div
-				style={{
-					display: 'flex',
-					justifyContent: 'space-between',
-					gap: '5px',
-					marginTop: '10px',
-				}}
-				className={styles.container}
-			>
-				{showSidebar ? <Sidebar /> : <></>}
+			{showSidebar ? <Sidebar /> : <></>}
+			<main className={styles.main}>
 				{children}
-			</div>
+		  </main>
+		  <Footer />
 		</div>
   );
 };

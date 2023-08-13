@@ -9,14 +9,20 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@babel/core": "^7.22.6",
+		"@babel/preset-typescript": "^7.22.5",
 		"@types/node": "20.3.3",
 		"@types/react": "18.2.14",
 		"@types/react-dom": "18.2.6",
 		"next": "13.4.7",
+		"next-npm-scss": "^1.0.7",
 		"prettier": "^2.8.8",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"sass": "^1.63.6",
-		"typescript": "5.1.6"
+		"sass": "^1.63.6"
+	},
+	"devDependencies": {
+		"loader": "^2.1.1",
+		"typescript": "^5.1.6"
 	}
 }
