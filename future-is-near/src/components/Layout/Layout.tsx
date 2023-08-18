@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import Head from "next/head";
 import styles from "./Layout.module.scss";
 
 import Sidebar from "@/components/Layout/Sidebar/Sidebar";
@@ -12,7 +13,7 @@ interface ILayout {
 }
 
 const Layout: FC<ILayout> = ({ children, showSidebar }) => {
-  return (
+	return (<>
 		<div className={styles.container}>
 			<Header />
 			{showSidebar ? <Sidebar /> : <></>}
@@ -21,6 +22,7 @@ const Layout: FC<ILayout> = ({ children, showSidebar }) => {
 		  </main>
 		  <Footer />
 		</div>
+	</>
   );
 };
 

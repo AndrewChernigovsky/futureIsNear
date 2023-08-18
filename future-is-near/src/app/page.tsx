@@ -4,9 +4,15 @@ import { NextPage } from 'next';
 import Layout from "@/components/Layout/Layout";
 import Button from 'next-npm-scss/Buttons/Button';
 
+export const metadata = {
+	title: 'Компьютер | Главная  ',
+	description:
+		'Купить компьютер недорого, дешевые комплектующие, видеокарты, оперативная память',
+};
 const Page: NextPage = () => {
-    return(
+	return (<>
         <Layout showSidebar>
+
 			<h1>Это главная страница</h1>
 			{/* <Button
 			
@@ -18,6 +24,7 @@ const Page: NextPage = () => {
 			
 			>Button</Button> */}
         </Layout>
+	</>
     );
 }
 
