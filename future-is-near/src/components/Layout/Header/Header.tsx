@@ -3,41 +3,27 @@ import React from 'react'
 import Link from 'next/link';
 import styles from './Header.module.scss';
 import Image from 'next/image';
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { data } from "./../../../data";
 	
 const Header: FC = () => {
-	const [open, setOpened] = React.useState(true);
-	const useWindowDimensions = () => {
-		const hasWindow = typeof window !== "undefined"
+	const [open, setOpened] = useState(true);
 
-		function getWindowDimensions() {
-			const width = hasWindow ? window.innerWidth : null
-			const height = hasWindow ? window.innerHeight : null
-			return {
-				width,
-				height,
-			}
-		}
+	const breakpoint = 1024
 
-		const [windowDimensions, setWindowDimensions] = useState(
-			getWindowDimensions()
-		)
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-		useEffect(() => {
-			if (hasWindow) {
-				function handleResize() {
-					setWindowDimensions(getWindowDimensions())
-				}
+	useEffect(() => {
+		const handleWindowResize = () => {
+			setWindowWidth(window.innerWidth);
+		};
 
-				window.addEventListener("resize", handleResize)
-				return () => window.removeEventListener("resize", handleResize)
-			}
-		}, [hasWindow])
+		window.addEventListener('resize', handleWindowResize);
 
-		return windowDimensions
-	}
-	const { height, width } = useWindowDimensions()
-	const breakpoint = 768
+		return () => {
+			window.removeEventListener('resize', handleWindowResize);
+		};
+	}, []);
 
 	return (
 		<>
@@ -57,9 +43,18 @@ const Header: FC = () => {
 								? styles.nav__wrapper + ' ' + styles.active
 								: styles.nav__wrapper
 						}
-					>
+					> .
 						<ul className={styles.nav__list}>
-							<li>
+							{data.map((el: any, index: number) => {
+								return (
+									<li key={index}>
+										<Link href={el.path_nav.nav_list}>
+											{el.names_nav}
+										</Link>
+									</li>
+								);
+							})}
+							{/* <li>
 								<Link href="/features">Услуги</Link>
 							</li>
 							<li>
@@ -70,17 +65,32 @@ const Header: FC = () => {
 							</li>
 							<li>
 								<Link href="/company">О компании</Link>
-							</li>
+							</li> */}
 						</ul>
 					</div>
+					<form
+						action=""
+						method="post"
+						className={styles.header__form}
+					>
+						<input type="search" name="search" id="search" />
+						<button type="submit">
+							<Image
+								src="/search.svg"
+								width={30}
+								height={30}
+								alt="Picture of the author"
+							/>
+						</button>
+					</form>
 					<ul className={styles.nav__auth}>
 						<li>
 							<Link color="inherit" href="/login">
-								{open && width <= breakpoint ? (
+								{windowWidth <= breakpoint ? (
 									<Image
 										src="/avatar.png"
-										width={100}
-										height={100}
+										width={30}
+										height={30}
 										alt="Picture of the author"
 									/>
 								) : (
@@ -89,8 +99,45 @@ const Header: FC = () => {
 							</Link>
 						</li>
 						<li>
-							<Link color="inherit" href="/signUp">
-								Зарегистрироваться
+							<Link color="inherit" href="/orders">
+								{windowWidth <= breakpoint ? (
+									<Image
+										src="/auth.png"
+										width={30}
+										height={30}
+										alt="Picture of the author"
+									/>
+								) : (
+									'Заказы'
+								)}
+							</Link>
+						</li>
+						<li>
+							<Link color="inherit" href="/favorites">
+								{windowWidth <= breakpoint ? (
+									<Image
+										src="/auth.png"
+										width={30}
+										height={30}
+										alt="Picture of the author"
+									/>
+								) : (
+									'Избранное'
+								)}
+							</Link>
+						</li>
+						<li>
+							<Link color="inherit" href="/cart">
+								{windowWidth <= breakpoint ? (
+									<Image
+										src="/auth.png"
+										width={30}
+										height={30}
+										alt="Picture of the author"
+									/>
+								) : (
+									'Корзина'
+								)}
 							</Link>
 						</li>
 					</ul>

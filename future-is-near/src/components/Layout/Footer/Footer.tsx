@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Footer: FC = () => {
 	return (
-		<div>
+		<footer className={styles.footer}>
 			<Link href="#">Features</Link>
 			<Link href="#">Customers</Link>
 			<Link href="/products">Pricing</Link>
@@ -16,7 +16,7 @@ const Footer: FC = () => {
 			<Link color="inherit" href="#">
 				Sign up
 			</Link>
-		</div>
+		</footer>
 	);
 };
 
