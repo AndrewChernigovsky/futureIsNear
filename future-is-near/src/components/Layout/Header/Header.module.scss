@@ -10,6 +10,7 @@
 
 		input{
 			min-height: inherit
+
 		};
 	}
 }
@@ -32,8 +33,11 @@
 		text-align: center;
 		gap: 20px;
 
+		li a {
+			color: $black;
+		}
+
 		li:not(:first-of-type) a {
-			color: $blue;
 
 			@media  screen and (min-width: $desktop) {
 				margin-left: 20px;
@@ -52,10 +56,12 @@
 		grid-row: 1/-1;
 		min-width: max-content;
 		justify-self: flex-end;
-	}
 
-	&__list {
-		margin-bottom: 10px;
+		li a {
+			display: grid;
+			align-items: center;
+			justify-items: center;
+		}
 	}
 
 	&__wrapper {

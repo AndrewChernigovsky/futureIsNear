@@ -7,12 +7,24 @@
 	align-items: center;
 	min-height: 100px;
 	padding: 20px 10px;
+	min-width: 100%;
 
-	@media  screen and (min-width: $desktop) {
-		display: flex;
+	&__wrapper {
+		min-width: 100%;
+	}
 
-		a:not(:first-of-type) {
-			margin-left: 20px;
+	&__nav {
+		display: grid;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+
+		@media  screen and (min-width: $desktop) {
+			display: flex;
+
+			li:not(:first-of-type) a {
+				margin-left: 20px;
+			}
 		}
 	}
 }
