@@ -1,0 +1,142 @@
+@import './../../variables.scss';
+
+.header {
+	padding: 10px 20px;
+
+	&__form {
+		border: 1px solid #000000;
+		min-height: 40px;
+		display: flex;
+		// min-width: 100%;
+		// flex-basis: 50%;
+		margin: 10px 10px;
+
+		input{
+			min-height: inherit;
+			// flex-basis: 100%;
+			// min-width: 100%;
+		};
+
+		button {
+			cursor: pointer;
+		}
+	}
+}
+
+.nav {
+	padding: 10px 10px;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+
+	@media  screen and (min-width: $desktop) {
+		justify-content: space-between;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__list,
+	&__auth {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		gap: 20px;
+
+		li a {
+			color: $black;
+		}
+
+		li:not(:first-of-type) a {
+
+			@media  screen and (min-width: $desktop) {
+				margin-left: 20px;
+			}
+		}
+
+		@media  screen and (min-width: $desktop) {
+			display: flex;
+			justify-content: flex-start;
+		}
+	}
+
+	&__list {
+		display: none;
+
+		@media  screen and (min-width: $desktop) {
+			display: flex;
+			justify-content: flex-start;
+		}
+	}
+
+	&__auth {
+		display: flex;
+		// grid-column: 3/3;
+		grid-row: 1/-1;
+		min-width: max-content;
+		// justify-self: flex-end;
+
+		li a {
+			display: grid;
+			align-items: center;
+			justify-items: center;
+		}
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-column: 1/4;
+		align-items: center;
+		transition: 0.3s ease-in-out;
+		height: 0;
+		overflow: hidden;
+		margin-top: 20px;
+	
+		&.active {
+			height: 100%;
+			transition: 0.5s ease-in-out;
+			// min-width: 100%;
+		}
+
+		@media  screen and (min-width: $middle) {
+			display: flex;
+			justify-content: space-between;
+			// min-width: 100%;
+			grid-column: 1/-1;
+			margin-top: 0;
+		}
+	}
+
+	&__btn {
+		width: 25px;
+		height: 40px;
+		background: transparent;
+		cursor: pointer;
+		border: none;
+		transition: 0.3s ease-in-out;
+		display: none;
+
+		span:first-of-type {
+			width: inherit;
+			height: 2px;
+			display: block;
+			background: $black;
+			box-shadow: 0 6px 0 $black, 0 -6px 0 $black;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		@media  screen and (min-width: $middle) {
+			width: 40px;
+			height: 40px;
+		}
+
+		@media  screen and (min-width: $desktop) {
+			display: none;
+		}
+	}
+}
+
