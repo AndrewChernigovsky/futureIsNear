@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import React from 'react';
 import Link from 'next/link';
@@ -63,7 +65,7 @@ const Header: FC = () => {
 						<input type="search" name="search" id="search" />
 						<button type="submit">
 							<Image
-								src="/search.svg"
+								src="http://chernigovsky1081.eternalhost.info/img/futureIsNear/search.svg"
 								width={30}
 								height={30}
 								alt="Picture of the author"

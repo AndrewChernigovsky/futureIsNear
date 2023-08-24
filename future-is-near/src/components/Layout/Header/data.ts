@@ -29,21 +29,21 @@ export let navAuth: {
 	{
 		href: '/login',
 		name: 'Войти',
-		image: '/login.svg',
+		image: 'http://chernigovsky1081.eternalhost.info/img/futureIsNear/login.svg',
 	},
 	{
 		href: '/orders',
 		name: 'Заказы',
-		image: '/orders.svg',
+		image: 'http://chernigovsky1081.eternalhost.info/img/futureIsNear/orders.svg',
 	},
 	{
 		href: '/favorites',
 		name: 'Избранное',
-		image: '/favorites.svg',
+		image: 'http://chernigovsky1081.eternalhost.info/img/futureIsNear/favorites.svg',
 	},
 	{
 		href: '/cart',
 		name: 'Корзина',
-		image: '/cart.svg',
+		image: 'http://chernigovsky1081.eternalhost.info/img/futureIsNear/cart.svg',
 	},
 ];

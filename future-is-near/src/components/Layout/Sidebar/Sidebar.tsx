@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react';
 import styles from './Sidebar.module.scss';
 import React from 'react';
@@ -7,7 +9,8 @@ import { useState, useEffect } from 'react';
 import { categories } from './data';
 
 const Sidebar: FC = () => {
-	const breakpoint = 1024;
+
+	const breakpoint = 1200;
 
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -52,6 +55,7 @@ const Sidebar: FC = () => {
 						</li>
 					);
 				})}
+				
 			</ul>
 		</aside>
 	);
