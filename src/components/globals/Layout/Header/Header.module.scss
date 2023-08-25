@@ -2,23 +2,34 @@
 
 .header {
 	padding: 10px 20px;
+	background-color: $blue;
 
 	&__form {
 		border: 1px solid #000000;
 		min-height: 40px;
 		display: flex;
-		// min-width: 100%;
-		// flex-basis: 50%;
-		margin: 10px 10px;
+			
+		@media  screen and (min-width: $desktop) {
+			margin: 10px 10px;
+			flex-grow: 1;
+		}
 
 		input{
 			min-height: inherit;
-			// flex-basis: 100%;
-			// min-width: 100%;
+			border: none;
+			width: 100%;
+
 		};
 
 		button {
 			cursor: pointer;
+			border: none;
+			background-color: $orange;
+			transition: 0.3s ease-in-out;
+
+			&:hover {
+				opacity: 0.8;
+			}
 		}
 	}
 }
@@ -46,6 +57,11 @@
 
 		li a {
 			color: $black;
+			transition: 0.3s ease-in-out;
+
+			&:hover {
+				opacity: 0.5;
+			}
 		}
 
 		li:not(:first-of-type) a {
@@ -72,10 +88,9 @@
 
 	&__auth {
 		display: flex;
-		// grid-column: 3/3;
 		grid-row: 1/-1;
 		min-width: max-content;
-		// justify-self: flex-end;
+		margin-bottom: 10px;
 
 		li a {
 			display: grid;

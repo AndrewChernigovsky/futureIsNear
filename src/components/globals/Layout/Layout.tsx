@@ -5,12 +5,13 @@ import Sidebar from './Sidebar/Sidebar'
 import Footer from './Footer/Footer'
 
 interface ILayout {
-  children: ReactNode
-  showSidebar?: boolean
+	children: ReactNode
+	showSidebar?: boolean
 }
 
 const Layout: FC<ILayout> = ({ children, showSidebar }) => {
-  return (
+
+	return (
     <>
       <div className={styles.container}>
         <Header />

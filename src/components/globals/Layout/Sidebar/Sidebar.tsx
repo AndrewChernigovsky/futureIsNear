@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'
 import { categories } from './data'
 
 const Sidebar: FC = () => {
-  const breakpoint = 1200
+  const breakpoint = 768
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
   useEffect(() => {
@@ -23,6 +23,8 @@ const Sidebar: FC = () => {
       window.removeEventListener('resize', handleWindowResize)
     }
   }, [])
+	
+	
 
   return (
     <aside className={styles.sidebar}>

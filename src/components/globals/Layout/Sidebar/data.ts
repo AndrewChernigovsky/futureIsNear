@@ -5,20 +5,6 @@ export const categories: {
   desc: string
 }[] = [
   {
-    href: '/card',
-    name: 'Карта',
-    image:
-      'http://chernigovsky1081.eternalhost.info/img/futureIsNear/credit-card.png',
-    desc: '',
-  },
-  {
-    href: '/tickets',
-    name: 'Билеты',
-    image:
-      'http://chernigovsky1081.eternalhost.info/img/futureIsNear/ticket.png',
-    desc: '',
-  },
-  {
     href: '/electronics',
     name: 'Электроника',
     image:
@@ -40,29 +26,10 @@ export const categories: {
     desc: '',
   },
   {
-    href: '/childens_goods',
-    name: 'Детские товары',
-    image: '/childsGoods.png',
-    desc: '',
-  },
-  {
-    href: '/stocks',
-    name: 'Акции',
-    image:
-      'http://chernigovsky1081.eternalhost.info/img/futureIsNear/stocks.png',
-    desc: '',
-  },
-  {
     href: '/premium',
     name: 'Premium',
     image:
       'http://chernigovsky1081.eternalhost.info/img/futureIsNear/premium.png',
-    desc: '',
-  },
-  {
-    href: '/brands',
-    name: 'Бренды',
-    image: '/brand.png',
     desc: '',
   },
   {
