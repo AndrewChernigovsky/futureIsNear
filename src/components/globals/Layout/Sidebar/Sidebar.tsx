@@ -29,7 +29,7 @@ const Sidebar: FC = () => {
   return (
     <aside className={styles.sidebar}>
       <ul className={styles.sidebar__wrapper}>
-        {categories.map((el: any, index: number) => {
+			  {categories.map((el: { href: string; name: string; image: string; desc: string}, index: number) => {
           return (
             <li key={index}>
               <Link color="inherit" href={el.href}>

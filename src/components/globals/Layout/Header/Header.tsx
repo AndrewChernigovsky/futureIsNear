@@ -45,7 +45,7 @@ const Header: FC = () => {
             }
           >
             <ul className={styles.nav__list}>
-              {navList.map((el: any, index: number) => {
+						  {navList.map((el: { href: string;  name: string}, index: number) => {
                 return (
                   <li key={index}>
                     <Link href={el.href}>{el.name}</Link>
