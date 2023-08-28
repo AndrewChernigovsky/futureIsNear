@@ -5,7 +5,8 @@ import Link from 'next/link'
 import styles from './Header.module.scss'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { navList, navAuth } from './data'
+import { categories } from './data'
+import {ImSearch} from 'react-icons/im'
 
 const Header: FC = () => {
   const breakpoint = 1024
@@ -43,49 +44,27 @@ const Header: FC = () => {
                 ? styles.nav__wrapper + ' ' + styles.active
                 : styles.nav__wrapper
             }
-          >
-            <ul className={styles.nav__list}>
-						  {navList.map((el: { href: string;  name: string}, index: number) => {
-                return (
-                  <li key={index}>
-                    <Link href={el.href}>{el.name}</Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+          ></div>
           <form action="" method="post" className={styles.header__form}>
             <input type="search" name="search" id="search" />
             <button type="submit">
-              <Image
-                src="http://chernigovsky1081.eternalhost.info/img/futureIsNear/search.svg"
-                width={30}
-                height={30}
-                alt="Picture of the author"
-              />
+				<ImSearch size={30} color={'blue'} />
             </button>
           </form>
           <ul className={styles.nav__auth}>
-            {navAuth.map((el: any, index: number) => {
+            {categories.map((el: any, index: number) => {
               return (
                 <li key={index}>
                   <Link color="inherit" href={el.href}>
                     {windowWidth <= breakpoint ? (
-                      <Image
-                        src={el.image}
-                        width={30}
-                        height={30}
-                        alt="Picture of the author"
-                      />
+                      <>
+                        {el.image((el.size = 30), (el.color = 'orange'))}
+                        <span className="visually-hidden">{el.desc}</span>
+                      </>
                     ) : (
                       <>
-                        <Image
-                          src={el.image}
-                          width={30}
-                          height={30}
-                          alt="Picture of the author"
-                        />
-                        {`${el.name}`}
+                        {el.image((el.size = 40), (el.color = 'white'))}
+                        <span style={{ color: el.color }}>{el.name}</span>
                       </>
                     )}
                   </Link>

@@ -4,7 +4,6 @@ import { FC } from 'react'
 import styles from './Sidebar.module.scss'
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { categories } from './data'
 
@@ -23,33 +22,41 @@ const Sidebar: FC = () => {
       window.removeEventListener('resize', handleWindowResize)
     }
   }, [])
-	
-	
 
   return (
     <aside className={styles.sidebar}>
       <ul className={styles.sidebar__wrapper}>
-			  {categories.map((el: { href: string; name: string; image: string; desc: string}, index: number) => {
-          return (
-            <li key={index}>
-              <Link color="inherit" href={el.href}>
-                {windowWidth <= breakpoint ? (
-                  <Image src={el.image} width={30} height={30} alt={el.desc} />
-                ) : (
-                  <>
-                    <Image
-                      src={el.image}
-                      width={40}
-                      height={40}
-                      alt={el.desc}
-                    />
-                    {`${el.name}`}
-                  </>
-                )}
-              </Link>
-            </li>
-          )
-        })}
+        {categories.map(
+          (
+            el: {
+              href: string
+              name: string
+              size: number
+              color: string
+              image: (size: number, color: string) => React.JSX.Element
+              desc: string
+            },
+            index: number,
+          ) => {
+            return (
+              <li key={index}>
+                <Link color="inherit" href={el.href}>
+                  {windowWidth <= breakpoint ? (
+                    <>
+                      {el.image((el.size = 30), (el.color = 'blue'))}
+                      <span className="visually-hidden">{el.desc}</span>
+                    </>
+                  ) : (
+                    <>
+                      {el.image(el.size, (el.color = 'blue'))}
+                      <span style={{color: el.color}}>{el.name}</span>
+                    </>
+                  )}
+                </Link>
+              </li>
+            )
+          },
+        )}
       </ul>
     </aside>
   )
