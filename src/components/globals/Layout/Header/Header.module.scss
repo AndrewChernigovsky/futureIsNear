@@ -110,10 +110,22 @@
 		min-width: max-content;
 		margin-bottom: 10px;
 
+		@media  screen and (min-width: $desktop) {
+			margin-bottom: 0;
+		}
+
 		li a {
 			display: grid;
 			align-items: center;
 			justify-items: center;
+			font-size: 12px;
+
+			@media  screen and (min-width: $middle) {
+				font-size: 14px;
+			}
+			@media  screen and (min-width: $desktop) {
+				font-size: 16px;
+			}
 		}
 	}
 

@@ -48,7 +48,7 @@ const Header: FC = () => {
           <form action="" method="post" className={styles.header__form}>
             <input type="search" name="search" id="search" />
             <button type="submit">
-              <ImSearch size={30} color={'blue'} />
+              <ImSearch size={20} color={'blue'} />
             </button>
           </form>
           <ul className={styles.nav__auth}>
@@ -58,12 +58,12 @@ const Header: FC = () => {
                   <Link color="inherit" href={el.href}>
                     {windowWidth <= breakpoint ? (
                       <>
-                        {el.image((el.size = 30), (el.color = 'orange'))}
+                        {el.image((el.size = 20), (el.color = 'orange'))}
                         <span className="visually-hidden">{el.desc}</span>
                       </>
                     ) : (
                       <>
-                        {el.image((el.size = 40), (el.color = 'white'))}
+                        {el.image((el.size = 20), (el.color = 'white'))}
                         <span style={{ color: el.color }}>{el.name}</span>
                       </>
                     )}
