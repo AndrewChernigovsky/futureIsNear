@@ -3,7 +3,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import styles from './Header.module.scss'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { categories } from './data'
 import { ImSearch } from 'react-icons/im'
@@ -50,7 +49,8 @@ const Header: FC = () => {
             <button type="submit">
               <ImSearch size={20} color={'blue'} />
             </button>
-          </form>
+				  </form>
+			<h1 className={styles.header__logoText}>LOGOTYPE</h1>
           <ul className={styles.nav__auth}>
             {categories.map((el: any, index: number) => {
               return (
@@ -58,7 +58,7 @@ const Header: FC = () => {
                   <Link color="inherit" href={el.href}>
                     {windowWidth <= breakpoint ? (
                       <>
-                        {el.image((el.size = 20), (el.color = 'orange'))}
+                        {el.image((el.size = 25), (el.color = 'white'))}
                         <span className="visually-hidden">{el.desc}</span>
                       </>
                     ) : (

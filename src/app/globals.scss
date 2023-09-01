@@ -49,3 +49,15 @@ ul {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+@font-face {
+	font-family: "PoiretOne";
+	src:
+		url('../../fonts/PoiretOne-Regular.woff2') format('woff2'),
+		url('../../fonts/PoiretOne-Regular.woff') format('woff'),
+		url('../../fonts/PoiretOne-Regular.ttf') format('true/type');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-variant: normal;
+}

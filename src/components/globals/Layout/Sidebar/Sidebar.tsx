@@ -43,7 +43,7 @@ const Sidebar: FC = () => {
                 <Link color="inherit" href={el.href}>
                   {windowWidth <= breakpoint ? (
                     <>
-                      {el.image((el.size = 20), (el.color = 'blue'))}
+                      {el.image((el.size = 25), (el.color = 'white'))}
                       <span className="visually-hidden">{el.desc}</span>
                     </>
                   ) : (
