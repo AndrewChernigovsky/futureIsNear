@@ -5,6 +5,9 @@
 	justify-content: center;
 	text-align: center;
 	align-items: center;
+	background-color: blue;
+	color: $white;
+	border-radius: 5px 5px 0 0;
 
 	min-height: 100px;
 	padding: 20px 10px;
@@ -26,10 +29,11 @@
 
 		li a {
 			transition: 0.3s ease-in-out;
-			color: $black;
+			color: $white;
 
 			&:hover {
 				opacity: 0.5;
+
 			}
 		}
 
