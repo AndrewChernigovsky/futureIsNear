@@ -28,7 +28,7 @@ export const categories: {
     desc: 'Электроника',
   },
   {
-    href: '/house_and_garden',
+    href: '/garden',
     name: 'Дом и сад',
     size: sizeDefault,
     color: colorDefault,
@@ -38,7 +38,7 @@ export const categories: {
     desc: 'Дом и сад',
   },
   {
-    href: '/clothes_shoose',
+    href: '/clothes',
     name: 'Одежда и обувь',
     size: sizeDefault,
     color: colorDefault,

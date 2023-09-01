@@ -9,11 +9,11 @@ import { categories } from './data'
 
 const Sidebar: FC = () => {
   const breakpoint = 768
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(globalThis.innerWidth)
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setWindowWidth(window.innerWidth)
+      setWindowWidth(globalThis.innerWidth)
     }
 
     window.addEventListener('resize', handleWindowResize)
@@ -49,7 +49,7 @@ const Sidebar: FC = () => {
                   ) : (
                     <>
                       {el.image(el.size, (el.color = 'blue'))}
-                      <span style={{color: el.color}}>{el.name}</span>
+                      <span style={{ color: el.color }}>{el.name}</span>
                     </>
                   )}
                 </Link>

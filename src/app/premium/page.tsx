@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 
-const About: NextPage = () => {
+const Premium: NextPage = () => {
   return (
     <div>
       <h1>Next page</h1>
@@ -8,4 +8,4 @@ const About: NextPage = () => {
   )
 }
 
-export default About
+export default Premium

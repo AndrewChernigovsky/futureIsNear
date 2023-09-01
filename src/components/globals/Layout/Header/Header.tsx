@@ -6,17 +6,17 @@ import styles from './Header.module.scss'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { categories } from './data'
-import {ImSearch} from 'react-icons/im'
+import { ImSearch } from 'react-icons/im'
 
 const Header: FC = () => {
   const breakpoint = 1024
 
   const [open, setOpened] = useState(true)
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  const [windowWidth, setWindowWidth] = useState(globalThis.innerWidth)
 
   useEffect(() => {
     const handleWindowResize = () => {
-      setWindowWidth(window.innerWidth)
+      setWindowWidth(globalThis.innerWidth)
     }
 
     window.addEventListener('resize', handleWindowResize)
@@ -48,7 +48,7 @@ const Header: FC = () => {
           <form action="" method="post" className={styles.header__form}>
             <input type="search" name="search" id="search" />
             <button type="submit">
-				<ImSearch size={30} color={'blue'} />
+              <ImSearch size={30} color={'blue'} />
             </button>
           </form>
           <ul className={styles.nav__auth}>
