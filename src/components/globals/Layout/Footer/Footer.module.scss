@@ -6,6 +6,8 @@
 	text-align: center;
 	align-items: center;
 	background-color: blue;
+	font-family: $primary-font;
+	font-weight: 600;
 	color: $white;
 	border-radius: 5px 5px 0 0;
 
@@ -45,5 +47,10 @@
 				margin-left: 20px;
 			}
 		}
+	}
+
+	&__rights {
+		font-family: $default-font;
+		font-weight: 400;
 	}
 }

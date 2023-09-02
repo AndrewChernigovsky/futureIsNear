@@ -9,25 +9,25 @@ const Footer: FC = () => {
 			<div className={styles.footer__wrapper}>
 				<ul className={styles.footer__nav}>
 					<li className={styles.footer__item}>
-						<Link href="#">Features</Link>
+						<Link href="#">Наши партнеры</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link href="#">Customers</Link>
+						<Link href="#">Горячая линия</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link href="/products">Pricing</Link>
+						<Link href="/products">тех. поддержка</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link href="#">Company</Link>
+						<Link href="#">О нас</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link color="inherit" href="#">Login</Link>
+						<Link color="inherit" href="#">Стать партнером</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link color="inherit" href="#">Sign up</Link>
+						<Link color="inherit" href="#">Стать амбассадором</Link>
 					</li>
 				</ul>
-				<span>all rigths reserved 2010-2023</span>
+				<span className={styles.footer__rights}>все права защищены 2010г-2023г</span>
 			</div>
 		</footer>
 	);
