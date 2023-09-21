@@ -29,7 +29,7 @@ const Product: React.FC<ProductI> = ({
 }) => {
   return (
     <>
-      <div className={styles.product}>
+      <a href={href} className={styles.product}>
         <div className={styles.product__image}>
           <Image src={path} width={300} alt="product" height={300} />
         </div>
@@ -70,7 +70,7 @@ const Product: React.FC<ProductI> = ({
 					  </tfoot>
           </table>
         </div>
-      </div>
+      </a>
     </>
   )
 }

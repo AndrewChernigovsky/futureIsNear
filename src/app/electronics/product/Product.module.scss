@@ -10,8 +10,8 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;
-		min-width: 300px;
-		min-height: 300px;
+		// min-width: 300px;
+		// min-height: 300px;
 		
 
 		img {
@@ -24,17 +24,25 @@
 
 	&__charachteristics {
 		display: grid;
-		grid-template-columns: 300px;
+		// grid-template-columns: 300px;
 		padding: 10px;
 
 		th {
-			max-width: 300px;
+			width: inherit;
 		}
 
 		tr {
 			display: flex;
 			justify-content: space-between;
 			gap: 5px;
+			width: inherit;
+		}
+
+		thead {
+			width: inherit;
+		}
+		tbody {
+			width: inherit;
 		}
 		
 		h3 {

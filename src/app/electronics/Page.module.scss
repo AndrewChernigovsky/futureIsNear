@@ -1,16 +1,22 @@
 .products {
-	display: flex;
+	display: grid;
+	grid-template-columns:20% 20% 20% 20%;
 	gap: 20px;
-	justify-content: flex-start;
 	
 	&__product {
 		display: grid;
 		gap: 20px;
-		flex-basis: 300px;
+		cursor: pointer;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		img {
+			width: 200px;
+			height: 200px;
+		}
 	}
-
-
-
 }
 
 .pagination {
