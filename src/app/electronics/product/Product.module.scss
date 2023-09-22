@@ -27,27 +27,10 @@
 		// grid-template-columns: 300px;
 		padding: 10px;
 
-		th {
-			width: inherit;
-		}
-
-		tr {
-			display: flex;
-			justify-content: space-between;
-			gap: 5px;
-			width: inherit;
-		}
-
-		thead {
-			width: inherit;
-		}
-		tbody {
-			width: inherit;
-		}
 		
 		h3 {
 			white-space: nowrap;
-			max-width: inherit;
+			max-width: 280px;
 			overflow: hidden;
 			text-overflow: ellipsis;
 		}

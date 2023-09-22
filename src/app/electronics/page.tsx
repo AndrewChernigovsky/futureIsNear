@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import Product from './product/Product'
 import { characteristics } from './product/data'
 import styles from './Page.module.scss'
+import { ProductI } from './product/Product'
 
 const Page: NextPage = () => {
   return (
@@ -21,9 +22,10 @@ const Page: NextPage = () => {
                     name={product.name}
                     sizes={product.sizes}
                     href={product.href}
-                    desc={product.desc}
+                    desc={product.desc!}
                     path={product.path}
                     rate={product.rate}
+					
                   />
                 </div>
               </>
@@ -32,7 +34,7 @@ const Page: NextPage = () => {
         </div>
       </div>
       <div className={styles.pagination}>
-        <ul>
+        {/* <ul>
           <li>
             <a href="">1</a>
           </li>
@@ -63,7 +65,7 @@ const Page: NextPage = () => {
           <li>
             <a href="">10</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </Layout>
   )

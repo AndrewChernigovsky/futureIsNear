@@ -61,3 +61,10 @@ ul {
 	font-stretch: normal;
 	font-variant: normal;
 }
+
+h1 {
+	font-size: 3rem;
+	@media screen and (min-width: 1024px) {
+		font-size: 6.4rem;
+	}
+}
