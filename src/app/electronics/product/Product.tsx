@@ -37,9 +37,32 @@ const Product: FC<ProductI> = ({
 				</div>
 				<div className={styles.product__charachteristics}>
 					<h3>{name}</h3>
-					<p>
-						{cost} {weight} {color} {rate} {resizes} {sizes} {desc}
-					</p>
+					<div className={styles.product__charachteristics_wrapper}>
+						<table>
+							<tbody>
+								<tr>
+									<td className={styles.product__cost}>
+										{cost} Р
+									</td>
+									<td>{weight} Г</td>
+								</tr>
+								<tr>
+									<td>Цвет</td>
+									<td>{color}</td>
+								</tr>
+								<tr>
+									<td>Размеры</td>
+									<td>{resizes}</td>
+								</tr>
+								<tr>
+									<td>{sizes} </td>
+									<td>{rate}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p>{desc}</p>
+					<span>Читать далее...</span>
 				</div>
 			</a>
 		</>

@@ -1,23 +1,22 @@
+@import "./../../components/globals/variables.scss";
+
 .products {
-	// display: flex;
-	// flex-wrap: wrap;
-	// justify-content: flex-start;
 	display: grid;
-	grid-template-columns:1fr;
-    justify-items: center;
+	grid-template-columns: 1fr;
+	justify-items: center;
 
 	@media screen and (min-width: 575px) {
-		grid-template-columns:repeat(2, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	@media screen and (min-width: 828px) {
-		grid-template-columns:repeat(3, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 	}
-	
+
 	@media screen and (min-width: 1024px) {
-		grid-template-columns:repeat(4, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 	}
-	
+
 	&__product {
 		display: grid;
 		gap: 20px;
@@ -25,7 +24,6 @@
 		min-width: 250px;
 		padding: 5px;
 		max-width: 300px;
-		// margin: 0 auto;
 
 		&:hover {
 			opacity: 0.8;
@@ -43,20 +41,20 @@
 			padding: 10px;
 			min-width: 30px;
 			min-height: 30px;
-			background-color: blue;
+			background-color: $blue;
 			border-radius: 5px;
 			transition: 0.3s ease-in-out;
 			cursor: pointer;
 
 			&:hover {
-				background-color: white;
+				background-color: $white;
 				a {
-					color: blue;
+					color: $blue;
 				}
 			}
-			
+
 			a {
-				color: white;
+				color: $white;
 			}
 		}
 	}
