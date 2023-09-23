@@ -8,58 +8,42 @@ import { useState, useEffect } from 'react'
 import { categories } from './data'
 
 const Sidebar: FC = () => {
-  const breakpoint = 768
-  const [windowWidth, setWindowWidth] = useState(globalThis.innerWidth)
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowWidth(globalThis.innerWidth)
-    }
-
-    window.addEventListener('resize', handleWindowResize)
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize)
-    }
-  }, [])
-
-  return (
-    <aside className={styles.sidebar}>
-      <ul className={styles.sidebar__wrapper}>
-        {categories.map(
-          (
-            el: {
-              href: string
-              name: string
-              size: number
-              color: string
-              image: (size: number, color: string) => React.JSX.Element
-              desc: string
-            },
-            index: number,
-          ) => {
-            return (
-              <li key={index}>
-                <Link color="inherit" href={el.href}>
-                  {windowWidth <= breakpoint ? (
-                    <>
-                      {el.image((el.size = 25), (el.color = 'white'))}
-                      <span className="visually-hidden">{el.desc}</span>
-                    </>
-                  ) : (
-                    <>
-                      {el.image((el.size = 25), (el.color = 'blue'))}
-                      <span style={{ color: el.color }}>{el.name}</span>
-                    </>
-                  )}
-                </Link>
-              </li>
-            )
-          },
-        )}
-      </ul>
-    </aside>
-  )
+	return (
+		<aside className={styles.sidebar}>
+			<ul className={styles.sidebar__wrapper}>
+				{categories.map(
+					(
+						el: {
+							href: string
+							name: string
+							size: number
+							color: string
+							image: (
+								size: number,
+								color: string,
+							) => React.JSX.Element
+							desc: string
+						},
+						index: number,
+					) => {
+						return (
+							<li key={index}>
+								<Link color="inherit" href={el.href}>
+									{el.image(
+										(el.size = 25),
+										(el.color = 'white'),
+									)}
+									<span className="visually-hidden">
+										{el.desc}
+									</span>
+								</Link>
+							</li>
+						)
+					},
+				)}
+			</ul>
+		</aside>
+	)
 }
 
 export default Sidebar
