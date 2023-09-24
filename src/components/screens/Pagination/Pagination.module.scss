@@ -1,0 +1,43 @@
+@import "@/../../../globals/variables.scss";
+
+.pagination {
+	ul {
+		display: flex;
+		gap: 10px;
+		margin: 10px 0;
+
+		li {
+			padding: 10px;
+			min-width: 50px;
+			min-height: 30px;
+			text-align: center;
+			background-color: $blue;
+			border-radius: 5px;
+			transition: 0.3s ease-in-out;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $white;
+				a {
+					color: $blue;
+				}
+			}
+
+			a {
+				color: $white;
+			}
+		}
+
+		.pageItemActive {
+			background-color: $white;
+			border: 1px solid $blue;
+
+			a {
+				color: $blue;
+			}
+		}
+		.pageItem {
+			background-color: $blue;
+		}
+	}
+}

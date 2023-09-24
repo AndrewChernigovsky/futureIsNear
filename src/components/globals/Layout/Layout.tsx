@@ -10,17 +10,17 @@ interface ILayout {
 }
 
 const Layout: FC<ILayout> = ({ children, showSidebar }) => {
-
 	return (
-    <>
-      <div className={styles.container}>
-        <Header />
-        {showSidebar ? <Sidebar /> : ''}
-        <main className={styles.main}>{children}</main>
-        <Footer />
-      </div>
-    </>
-  )
+		<>
+			<div className={styles.container}>
+				<Header />
+				{showSidebar ? <Sidebar /> : ''}
+				<main className={styles.main}>{children}</main>
+
+				<Footer />
+			</div>
+		</>
+	)
 }
 
 export default Layout
