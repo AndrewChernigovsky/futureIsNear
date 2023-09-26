@@ -38,7 +38,6 @@ const authPage: NextPage = () => {
 	return (
 		<>
 			<Layout>
-				{' '}
 				<h1>Страница Авторизации</h1>
 				<form
 					onSubmit={handleSubmit}

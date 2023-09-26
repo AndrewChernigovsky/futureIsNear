@@ -31,7 +31,7 @@ const Header: FC = () => {
 					></div>
 					<form
 						action=""
-						method="post"
+						method="POST"
 						className={styles.header__form}
 					>
 						<input type="search" name="search" id="search" />
@@ -39,11 +39,11 @@ const Header: FC = () => {
 							<ImSearch size={20} color={'blue'} />
 						</button>
 					</form>
-					<Link className={styles.header__logoText} href="./">
+					<Link className={styles.header__logoText} href="/">
 						LOGOTYPE
 					</Link>
 					<ul className={styles.nav__auth}>
-						{categories.map((el: any, index: number) => {
+						{categories.map((el, index) => {
 							return (
 								<li key={index}>
 									<Link color="inherit" href={el.href}>

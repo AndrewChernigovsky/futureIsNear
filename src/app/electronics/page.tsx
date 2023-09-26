@@ -2,12 +2,12 @@
 
 import Layout from '@/components/globals/Layout/Layout'
 import { NextPage } from 'next'
-import Product from './product/Product'
-import { characteristics } from './product/data'
+import { characteristics } from '../../components/globals/CatalogCard/data'
 import styles from './Page.module.scss'
-import Pagination from '@/components/screens/Pagination/Pagination'
+import Pagination from '@/components/globals/Pagination/Pagination'
 import { useState } from 'react'
-import paginate from '@/components/screens/Pagination/paginate'
+import paginate from '@/components/globals/Pagination/paginate'
+import CatalogCard from '@/components/globals/CatalogCard/CatalogCard'
 
 const Page: NextPage = () => {
 	let allCategory = characteristics[0].electronics.categories
@@ -30,30 +30,16 @@ const Page: NextPage = () => {
 		<Layout showSidebar>
 			<h1>Электроника</h1>
 
-			<div className={styles.category}>
-				<div className={styles.products}>
-					{paginatedPosts.map((product: any) => {
-						return (
-							<div
-								className={styles.products__product}
-								key={product.id}
-							>
-								<Product
-									cost={product.cost}
-									weight={product.weight}
-									color={product.color}
-									name={product.name}
-									sizes={product.sizes}
-									resizes={product.resizes}
-									href={product.href}
-									desc={product.desc!}
-									path={product.path}
-									rate={product.rate}
-								/>
-							</div>
-						)
-					})}
-				</div>
+			<div className={styles.products}>
+				{paginatedPosts.map((product: any) => {
+					return (
+						<CatalogCard
+							image={product.path}
+							title={product.name}
+							price={product.cost}
+						/>
+					)
+				})}
 			</div>
 			<Pagination
 				items={length} // 100

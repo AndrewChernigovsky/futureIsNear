@@ -1,32 +1,8 @@
-@import "./../../components/globals/variables.scss";
-
 .products {
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-items: center;
-
-	@media screen and (min-width: 575px) {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	@media screen and (min-width: 828px) {
-		grid-template-columns: repeat(3, 1fr);
-	}
-
-	@media screen and (min-width: 1024px) {
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	&__product {
-		display: grid;
-		gap: 20px;
-		cursor: pointer;
-		min-width: 250px;
-		padding: 5px;
-		max-width: 300px;
-
-		&:hover {
-			opacity: 0.8;
-		}
-	}
+	padding: 30px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
 }

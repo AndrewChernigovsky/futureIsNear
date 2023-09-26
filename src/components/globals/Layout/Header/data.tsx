@@ -7,14 +7,7 @@ import { AiOutlineLogin } from 'react-icons/ai'
 let sizeDefault = 50
 let colorDefault = 'black'
 
-export const categories: {
-	name: string
-	href: string
-	size: number
-	color: string
-	image: (size: number, color: string) => React.JSX.Element
-	desc: string
-}[] = [
+export const categories = [
 	{
 		href: '/auth',
 		name: 'Войти',

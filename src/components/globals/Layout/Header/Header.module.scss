@@ -1,11 +1,13 @@
-@import "./../../variables.scss";
+@import './../../variables.scss';
 
 .header {
 	padding: 10px 20px;
 	background-color: blue;
 	font-family: $primary-font;
-	// border-radius: 0 0 5px 5px;
 	font-weight: 600;
+	position: sticky;
+	top: 0;
+	z-index: 1;
 
 	&__form {
 		border: 1px solid #000000;

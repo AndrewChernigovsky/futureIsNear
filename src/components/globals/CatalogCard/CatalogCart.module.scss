@@ -1,0 +1,35 @@
+.card {
+	border-radius: 5px;
+	background: rgb(118, 116, 255);
+	width: 20%;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.card:hover {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.cardPicture {
+	height: 50%;
+	overflow: hidden;
+}
+
+.cardPicture img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.cardInfo {
+	padding: 20px;
+
+	&__price {
+		font-weight: bold;
+	}
+}
