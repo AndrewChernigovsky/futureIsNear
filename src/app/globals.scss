@@ -28,6 +28,7 @@ footer {
 
 main {
 	flex-grow: 1;
+	margin-bottom: 10px;
 
 	@media screen and (min-width: $middle) {
 		margin: 0 auto;
