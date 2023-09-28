@@ -1,4 +1,4 @@
-@import './../variables.scss';
+@import "./../variables.scss";
 
 .container {
 	min-height: 100%;
@@ -15,9 +15,5 @@
 	@media screen and (min-width: $desktop) {
 		margin: 0 auto;
 		padding: 0 10px;
-	}
-
-	.main {
-		min-width: calc(100% - 50px);
 	}
 }

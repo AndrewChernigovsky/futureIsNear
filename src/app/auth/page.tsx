@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 import Layout from '@/components/globals/Layout/Layout'
 import styles from './AuthPage.module.scss'
 
-const schema: any = Yup.object().shape({
+const schema = Yup.object().shape({
 	name: Yup.string().required(),
 	email: Yup.string().required().email(),
 	password: Yup.string().required().min(7),
@@ -17,7 +17,7 @@ const schema: any = Yup.object().shape({
 const authPage: NextPage = () => {
 	// Yup schema to validate the form
 
-	const formik: any = useFormik({
+	const formik = useFormik({
 		initialValues: {
 			name: '',
 			email: '',

@@ -1,12 +1,27 @@
 .card {
 	border-radius: 5px;
 	background: rgb(118, 116, 255);
-	width: 20%;
+	display: flex;
+	flex-basis: 90%;
+
+	@media screen and (min-width: 475px) {
+		flex-basis: 45%;
+	}
+
+	@media screen and (min-width: 768px) {
+		flex-basis: 30%;
+	}
+
+	@media screen and (min-width: 1024px) {
+		flex-basis: 20%;
+	}
 
 	&__wrapper {
-		display: flex;
-		flex-direction: column;
-		gap: 5px;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 60% 40%;
+		min-height: 300px;
+		width: 100%;
 	}
 	cursor: pointer;
 	transition: 0.3s;
@@ -17,17 +32,25 @@
 }
 
 .cardPicture {
-	height: 50%;
-	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	position: relative;
 }
 
 .cardPicture img {
+	max-height: 100%;
+	max-width: 100%;
 	width: 100%;
 	object-fit: cover;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .cardInfo {
-	padding: 20px;
+	padding: 10px;
+	background: rgb(118, 116, 255);
 
 	&__price {
 		font-weight: bold;
