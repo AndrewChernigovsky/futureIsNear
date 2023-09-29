@@ -12,10 +12,10 @@ interface ILayout {
 const Layout: FC<ILayout> = ({ children, showSidebar }) => {
 	return (
 		<>
-			<div className={styles.container}>
+			<div className={styles.wrapper}>
 				<Header />
 				{showSidebar ? <Sidebar /> : ''}
-				<main className={styles.main}>{children}</main>
+				<main className={styles.container}>{children}</main>
 
 				<Footer />
 			</div>

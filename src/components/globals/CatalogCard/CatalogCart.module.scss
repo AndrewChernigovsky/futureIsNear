@@ -29,12 +29,18 @@
 
 .card:hover {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+	.cardPicture img {
+		max-width: 110%;
+		width: calc(100% + 5px);
+	}
 }
 
 .cardPicture {
 	height: 100%;
 	width: 100%;
 	position: relative;
+	overflow: hidden;
 }
 
 .cardPicture img {
@@ -42,15 +48,14 @@
 	max-width: 100%;
 	width: 100%;
 	object-fit: cover;
-	left: 50%;
-	position: absolute;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	object-position: center;
+	border-radius: 5px 5px 0 0;
 }
 
 .cardInfo {
 	padding: 10px;
 	background: rgb(118, 116, 255);
+	border-radius: 5px;
 
 	&__price {
 		font-weight: bold;
