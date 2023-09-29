@@ -36,9 +36,9 @@ const authPage: NextPage = () => {
 	const { errors, touched, values, handleChange, handleSubmit } = formik
 
 	return (
-		<>
-			<Layout>
-				<h1>Страница Авторизации</h1>
+		<Layout>
+			<h1>Страница Авторизации</h1>
+			<div className={styles.wrapper}>
 				<form
 					onSubmit={handleSubmit}
 					method="POST"
@@ -80,8 +80,8 @@ const authPage: NextPage = () => {
 
 					<button type="submit">Submit</button>
 				</form>
-			</Layout>
-		</>
+			</div>
+		</Layout>
 	)
 }
 
