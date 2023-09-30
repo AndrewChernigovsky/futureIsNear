@@ -36,6 +36,7 @@ main {
 
 	.main-wrapper {
 		margin-left: 50px;
+		max-width: 1440px;
 		@media screen and (min-width: $middle) {
 			margin: 0 auto;
 		}

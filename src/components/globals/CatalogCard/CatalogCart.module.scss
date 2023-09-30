@@ -31,8 +31,7 @@
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 	.cardPicture img {
-		max-width: 110%;
-		width: calc(100% + 5px);
+		transform: scale(1.15);
 	}
 }
 
@@ -50,6 +49,7 @@
 	object-fit: cover;
 	object-position: center;
 	border-radius: 5px 5px 0 0;
+	transition: 0.3s ease-in-out;
 }
 
 .cardInfo {
