@@ -1,3 +1,6 @@
+@import "../variables";
+@import "../../../app/mixins";
+
 .card {
 	border-radius: 5px;
 	background: rgb(118, 116, 255);
@@ -19,19 +22,35 @@
 	&__wrapper {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 60% 40%;
+		grid-template-rows: 60% min-content;
 		min-height: 300px;
 		width: 100%;
 	}
 	cursor: pointer;
 	transition: 0.3s;
+
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+		min-width: 100%;
+		gap: 10px;
+		align-items: center;
+		padding: 10px;
+
+		button[type="button"] {
+			@include button(40px, 100px, $white, $blue, $primary-font, 600);
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
 }
 
 .card:hover {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 	.cardPicture img {
-		transform: scale(1.15);
+		transform: scale(1.05);
 	}
 }
 
@@ -40,11 +59,11 @@
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+	border-radius: 5px;
 }
 
 .cardPicture img {
 	max-height: 100%;
-	max-width: 100%;
 	width: 100%;
 	object-fit: cover;
 	object-position: center;

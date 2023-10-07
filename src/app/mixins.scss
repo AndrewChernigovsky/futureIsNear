@@ -1,0 +1,69 @@
+@import "./../components/globals/variables";
+@mixin button($width, $height, $colorFont, $colorBackground, $font: $primary-font, $fontWeight: 600) {
+	min-width: $height;
+	min-height: $width;
+	color: $colorFont;
+	background-color: $colorBackground;
+	font-family: $font;
+	font-weight: $fontWeight;
+	border: 1px solid transparent;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	align-items: center;
+	transition: 0.3s ease-in-out;
+}
+
+@mixin flexColumnSpaceBetween {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+@mixin flexCenterWrapGap($gap) {
+	display: flex;
+	justify-content: center;
+	gap: $gap;
+	flex-wrap: wrap;
+}
+@mixin flexCenterWrapGap($gap) {
+	display: flex;
+	justify-content: center;
+	gap: $gap;
+	flex-wrap: wrap;
+}
+@mixin gridCenterGapColumns($gap, $columns) {
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	grid-template-columns: $columns;
+	gap: $gap;
+}
+
+@mixin gridCenter() {
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+}
+
+@mixin font($family: false, $size: false, $weight: false, $color: false) {
+	@if $family {
+		@if ($family: $primary-font) {
+			$font-family: $primary-font;
+		}
+		@if ($family: $default-font) {
+			$font-family: $default-font;
+		}
+	}
+	@if $size {
+		font-size: $size;
+	}
+	@if $weight {
+		font-weight: $weight;
+	}
+	@if $color {
+		color: $color;
+	}
+}

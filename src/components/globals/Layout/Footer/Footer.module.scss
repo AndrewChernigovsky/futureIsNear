@@ -1,41 +1,26 @@
 @import "./../../variables.scss";
-
+@import "./../../../../app/mixins.scss";
 .footer {
-	display: grid;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	background-color: blue;
-	font-family: $primary-font;
-	font-weight: 600;
-	color: $white;
-	// border-radius: 5px 5px 0 0;
-
+	background-color: $blue;
+	@include gridCenter;
+	@include font($family: $default-font, $size: 12px, $weight: 600, $color: $white);
 	min-height: 100px;
 	padding: 20px 10px;
 	min-width: 100%;
-	font-size: 12px;
 
 	&__wrapper {
 		min-width: 100%;
 	}
 
 	&__nav {
-		display: grid;
-		justify-content: center;
-		text-align: center;
-		align-items: center;
-		grid-template-columns: 1fr 1fr;
-		gap: 10px;
+		@include gridCenterGapColumns(10px, 1fr 1fr);
 		margin-bottom: 10px;
 
 		li a {
 			transition: 0.3s ease-in-out;
 			color: $white;
-
 			&:hover {
 				opacity: 0.5;
-
 			}
 		}
 
@@ -50,7 +35,6 @@
 	}
 
 	&__rights {
-		font-family: $default-font;
-		font-weight: 400;
+		@include font($family: $default-font, $weight: 400);
 	}
 }

@@ -1,7 +1,6 @@
+@import "./../app/mixins";
 .products {
 	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	flex-wrap: wrap;
+	@include flexCenterWrapGap(20px);
+	flex-grow: 1;
 }

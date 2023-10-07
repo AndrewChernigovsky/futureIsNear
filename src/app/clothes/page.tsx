@@ -35,6 +35,7 @@ const Clothes: NextPage = () => {
 								image={product.path!}
 								title={product.name!}
 								price={product.cost!}
+								key={product.id}
 							/>
 						)
 					})}

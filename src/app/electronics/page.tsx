@@ -27,7 +27,6 @@ const Page: NextPage = () => {
 		<Layout showSidebar>
 			<div className="main-wrapper">
 				<h1>Электроника</h1>
-
 				<div className={styles.products}>
 					{paginatedPosts.map((product: categoryT) => {
 						return (
@@ -35,17 +34,18 @@ const Page: NextPage = () => {
 								image={product.path!}
 								title={product.name!}
 								price={product.cost!}
+								key={product.id}
 							/>
 						)
 					})}
 				</div>
-				<Pagination
-					items={length}
-					currentPage={currentPage}
-					pageSize={pageSize}
-					onPageChange={onPageChange}
-				/>
 			</div>
+			<Pagination
+				items={length}
+				currentPage={currentPage}
+				pageSize={pageSize}
+				onPageChange={onPageChange}
+			/>
 		</Layout>
 	)
 }

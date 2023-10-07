@@ -1,7 +1,7 @@
 import styles from './Footer.module.scss'
 
-import { FC } from 'react';
-import Link from 'next/link';
+import { FC } from 'react'
+import Link from 'next/link'
 
 const Footer: FC = () => {
 	return (
@@ -15,22 +15,28 @@ const Footer: FC = () => {
 						<Link href="#">Горячая линия</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link href="/products">тех. поддержка</Link>
+						<Link href="/products">Тех. поддержка</Link>
 					</li>
 					<li className={styles.footer__item}>
 						<Link href="#">О нас</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link color="inherit" href="#">Стать партнером</Link>
+						<Link color="inherit" href="#">
+							Стать партнером
+						</Link>
 					</li>
 					<li className={styles.footer__item}>
-						<Link color="inherit" href="#">Стать амбассадором</Link>
+						<Link color="inherit" href="#">
+							Стать амбассадором
+						</Link>
 					</li>
 				</ul>
-				<span className={styles.footer__rights}>все права защищены 2010г-2023г</span>
+				<span className={styles.footer__rights}>
+					все права защищены 2010г-2023г
+				</span>
 			</div>
 		</footer>
-	);
-};
+	)
+}
 
-export default Footer;
+export default Footer

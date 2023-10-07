@@ -35,6 +35,7 @@ const Garden: NextPage = () => {
 								image={product.path!}
 								title={product.name!}
 								price={product.cost!}
+								key={product.id}
 							/>
 						)
 					})}
