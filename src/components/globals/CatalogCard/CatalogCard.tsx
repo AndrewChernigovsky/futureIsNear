@@ -24,11 +24,11 @@ const CatalogCard: FC<TCard> = ({ image, title, price }) => {
 				</div>
 				<div className={styles.card__buttons}>
 					<button type="button">
-						Купить
+						<span>Купить</span>
 						<AiOutlineShoppingCart size={20} />
 					</button>
 					<button type="button">
-						Избранное
+						<span>Избранное</span>
 						<BiLike size={20} />
 					</button>
 				</div>

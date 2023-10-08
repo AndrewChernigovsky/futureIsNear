@@ -1,24 +1,19 @@
 @import "@/../../../globals/variables.scss";
+@import "@/../../../../app/mixins.scss";
 
 .pagination {
+	@include flex($justify: center, $gap: 20px, $wrap: wrap, $grow: 1);
 	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	flex-wrap: wrap;
+	min-height: 100%;
 
 	ul {
-		display: flex;
-		gap: 10px;
-		margin: 10px 0;
+		@include flex($alignS: flex-end, $gap: 10px, $margin: 10px 0);
 
 		li {
-			min-width: 50px;
-			min-height: 30px;
+			@include HWidth-MPadding-br($min-height: 50px, $min-width: 50px, $borderRadius: 5px);
 			text-align: center;
 			background-color: $blue;
-			border-radius: 5px;
-			transition: 0.3s ease-in-out;
+			transition: $base-transition;
 			cursor: pointer;
 			display: flex;
 

@@ -6,14 +6,20 @@ $transparent: transparent;
 $orange: rgb(255, 149, 0);
 $blue: blue;
 $blue1: rgb(80, 135, 255);
+$purple-light: rgb(118, 116, 255);
 $antiquewhite: antiquewhite;
 $gray: rgb(212, 212, 212);
 $green: green;
 $white-1: rgb(238, 238, 238);
+$black-1: rgba(0, 0, 0, 0.24);
 //fonts
 $default-font: "Arial", sans-serif;
 $primary-font: "PoiretOne", "Arial", sans-serif;
-$font: "PoiretOne", "Arial", sans-serif;
+$regular: 400;
+$bold: 600;
 //screen breakpoints
+$phone-md: 535px;
 $middle: 768px;
 $desktop: 1200px;
+// animations
+$base-transition: 0.3s ease-in-out;

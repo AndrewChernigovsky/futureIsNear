@@ -1,7 +1,7 @@
 @import "./../components/globals/variables";
 @mixin button($width, $height, $colorFont, $colorBackground, $font: $primary-font, $fontWeight: 600) {
-	min-width: $height;
 	min-height: $width;
+	min-width: $height;
 	color: $colorFont;
 	background-color: $colorBackground;
 	font-family: $font;
@@ -26,12 +26,95 @@
 	gap: $gap;
 	flex-wrap: wrap;
 }
-@mixin flexCenterWrapGap($gap) {
+@mixin flex(
+	$direction: null,
+	$justify: null,
+	$justifyI: null,
+	$align: null,
+	$alignI: null,
+	$wrap: null,
+	$grow: null,
+	$gap: null,
+	$padding: null,
+	$margin: null,
+	$alignS: null
+) {
 	display: flex;
-	justify-content: center;
-	gap: $gap;
-	flex-wrap: wrap;
+	@if $direction {
+		flex-direction: $direction;
+	}
+	@if $gap {
+		gap: $gap;
+	}
+	@if $wrap {
+		flex-wrap: $wrap;
+	}
+	@if $justify {
+		justify-content: $justify;
+	}
+	@if $justifyI {
+		justify-content: $justifyI;
+	}
+	@if $align {
+		align-content: $align;
+	}
+	@if $alignI {
+		align-items: $alignI;
+	}
+	@if $alignS {
+		align-self: $alignS;
+	}
+	@if $padding {
+		padding: $padding;
+	}
+	@if $margin {
+		margin: $margin;
+	}
+	@if $grow {
+		flex-grow: $grow;
+	}
 }
+@mixin grid(
+	$justify: null,
+	$justifyI: null,
+	$align: null,
+	$alignI: null,
+	$wrap: null,
+	$gap: null,
+	$gridColumn: null,
+	$padding: null,
+	$margin: null
+) {
+	display: grid;
+	@if $gap {
+		gap: $gap;
+	}
+	@if $wrap {
+		flex-wrap: $wrap;
+	}
+	@if $gridColumn {
+		grid-column: $gridColumn;
+	}
+	@if $justify {
+		justify-content: $justify;
+	}
+	@if $justifyI {
+		justify-content: $justifyI;
+	}
+	@if $align {
+		align-content: $align;
+	}
+	@if $alignI {
+		align-items: $alignI;
+	}
+	@if $padding {
+		padding: $padding;
+	}
+	@if $margin {
+		margin: $margin;
+	}
+}
+
 @mixin gridCenterGapColumns($gap, $columns) {
 	display: grid;
 	justify-content: center;
@@ -48,14 +131,9 @@
 	align-items: center;
 }
 
-@mixin font($family: false, $size: false, $weight: false, $color: false) {
+@mixin font($family: null, $size: null, $weight: null, $color: null, $transform: null, $align: null) {
 	@if $family {
-		@if ($family: $primary-font) {
-			$font-family: $primary-font;
-		}
-		@if ($family: $default-font) {
-			$font-family: $default-font;
-		}
+		font-family: $family;
 	}
 	@if $size {
 		font-size: $size;
@@ -65,5 +143,69 @@
 	}
 	@if $color {
 		color: $color;
+	}
+	@if $transform {
+		text-transform: $transform;
+	}
+	@if $align {
+		text-align: $align;
+	}
+}
+
+@mixin HWidth-MPadding-br(
+	$height: null,
+	$width: null,
+	$min-height: null,
+	$min-width: null,
+	$max-height: null,
+	$max-width: null,
+	$padding: null,
+	$margin: null,
+	$borderRadius: null
+) {
+	@if $height {
+		height: $height;
+	}
+	@if $width {
+		width: $width;
+	}
+	@if $min-height {
+		min-height: $min-height;
+	}
+	@if $min-width {
+		min-width: $min-width;
+	}
+	@if $max-height {
+		max-height: $max-height;
+	}
+	@if $max-width {
+		max-width: $max-width;
+	}
+	@if $padding {
+		padding: $padding;
+	}
+	@if $margin {
+		margin: $margin;
+	}
+}
+
+@mixin position($position: null, $top: null, $bottom: null, $left: null, $right: null, $z-index: null) {
+	@if $position {
+		position: $position;
+	}
+	@if $top {
+		top: $top;
+	}
+	@if $bottom {
+		bottom: $bottom;
+	}
+	@if $left {
+		left: $left;
+	}
+	@if $right {
+		right: $right;
+	}
+	@if $z-index {
+		z-index: $z-index;
 	}
 }

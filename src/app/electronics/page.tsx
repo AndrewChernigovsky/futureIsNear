@@ -39,13 +39,13 @@ const Page: NextPage = () => {
 						)
 					})}
 				</div>
+				<Pagination
+					items={length}
+					currentPage={currentPage}
+					pageSize={pageSize}
+					onPageChange={onPageChange}
+				/>
 			</div>
-			<Pagination
-				items={length}
-				currentPage={currentPage}
-				pageSize={pageSize}
-				onPageChange={onPageChange}
-			/>
 		</Layout>
 	)
 }

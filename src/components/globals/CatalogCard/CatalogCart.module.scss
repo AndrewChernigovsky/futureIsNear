@@ -3,19 +3,19 @@
 
 .card {
 	border-radius: 5px;
-	background: rgb(118, 116, 255);
+	background: $purple-light;
 	display: flex;
 	flex-basis: 90%;
 
-	@media screen and (min-width: 475px) {
+	@media screen and (min-width: $phone-md) {
 		flex-basis: 45%;
 	}
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: $middle) {
 		flex-basis: 30%;
 	}
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (min-width: $desktop) {
 		flex-basis: 20%;
 	}
 
@@ -23,22 +23,30 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 60% min-content;
-		min-height: 300px;
-		width: 100%;
+		@include HWidth-MPadding-br($min-height: 300px, $width: 100%);
 	}
 	cursor: pointer;
-	transition: 0.3s;
+	transition: $base-transition;
 
 	&__buttons {
-		display: flex;
-		justify-content: space-between;
-		min-width: 100%;
-		gap: 10px;
-		align-items: center;
-		padding: 10px;
-
+		@include flex($alignI: center, $justify: space-between, $gap: 10px);
+		@include HWidth-MPadding-br($min-width: 100%, $padding: 10px);
 		button[type="button"] {
-			@include button(40px, 100px, $white, $blue, $primary-font, 600);
+			background-color: $blue;
+			@include HWidth-MPadding-br($min-width: 10px, $min-height: 40px);
+			@include font($color: $white, $family: $primary-font, $weight: $bold);
+			@include flex($justify: center, $alignI: center, $gap: 10px);
+
+			span {
+				display: none;
+			}
+
+			@media screen and (min-width: $middle) {
+				@include HWidth-MPadding-br($min-width: 100px, $min-height: 40px);
+				span {
+					display: inline;
+				}
+			}
 			&:hover {
 				opacity: 0.5;
 			}
@@ -47,7 +55,7 @@
 }
 
 .card:hover {
-	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	box-shadow: $black-1 0px 3px 8px;
 
 	.cardPicture img {
 		transform: scale(1.05);
@@ -55,28 +63,23 @@
 }
 
 .cardPicture {
-	height: 100%;
-	width: 100%;
+	@include HWidth-MPadding-br($height: 100%, $width: 100%, $borderRadius: 5px);
 	position: relative;
 	overflow: hidden;
-	border-radius: 5px;
 }
 
 .cardPicture img {
-	max-height: 100%;
-	width: 100%;
 	object-fit: cover;
 	object-position: center;
-	border-radius: 5px 5px 0 0;
-	transition: 0.3s ease-in-out;
+	transition: $base-transition;
+	@include HWidth-MPadding-br($max-height: 100%, $width: 100%, $borderRadius: 5px 5px 0 0);
 }
 
 .cardInfo {
-	padding: 10px;
-	background: rgb(118, 116, 255);
-	border-radius: 5px;
-
+	@include HWidth-MPadding-br($padding: 10px, $borderRadius: 5px);
+	background: $purple-light;
+	@include font($family: $default-font, $weight: $regular);
 	&__price {
-		font-weight: bold;
+		font-weight: $bold;
 	}
 }

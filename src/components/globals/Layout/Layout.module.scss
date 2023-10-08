@@ -1,21 +1,11 @@
 @import "./../variables.scss";
+@import "./../../../app/mixins.scss";
 
 .wrapper {
-	display: flex;
-	flex-direction: column;
+	@include flex($direction: column);
 	min-height: 100%;
 }
 
 .container {
-	min-height: 100%;
-	margin: 0 auto;
-	padding: 30px;
-	min-width: 100%;
-	max-width: 1440px;
-	background: $white-1;
-
-	@media screen and (min-width: $desktop) {
-		margin: 0 auto;
-		padding: 0 10px;
-	}
+	@include HWidth-MPadding-br($min-height: 100%, $max-width: 1440px, $padding: 0 10px, $margin: 0 auto);
 }

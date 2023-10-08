@@ -30,7 +30,6 @@ footer {
 main {
 	flex-grow: 1;
 	margin-bottom: 10px;
-	@include flexColumnSpaceBetween;
 	@media screen and (min-width: $middle) {
 		margin: 0 auto;
 	}

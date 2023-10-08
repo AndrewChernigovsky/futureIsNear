@@ -1,9 +1,10 @@
 @import "./../../variables.scss";
 @import "./../../../../app/mixins.scss";
+
 .footer {
 	background-color: $blue;
 	@include gridCenter;
-	@include font($family: $default-font, $size: 12px, $weight: 600, $color: $white);
+	@include font($family: $primary-font, $size: 12px, $weight: 600, $color: $white);
 	min-height: 100px;
 	padding: 20px 10px;
 	min-width: 100%;
