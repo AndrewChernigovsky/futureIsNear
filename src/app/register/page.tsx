@@ -5,18 +5,15 @@ import type { NextPage } from 'next'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import Layout from '@/components/globals/Layout/Layout'
-import styles from './AuthPage.module.scss'
+import styles from './Register.module.scss'
 
 const schema = Yup.object().shape({
 	name: Yup.string().required(),
 	email: Yup.string().required().email(),
 	password: Yup.string().required().min(7),
-	// Formik hook to handle the form state
 })
 
 const authPage: NextPage = () => {
-	// Yup schema to validate the form
-
 	const formik = useFormik({
 		initialValues: {
 			name: '',
@@ -24,25 +21,21 @@ const authPage: NextPage = () => {
 			password: '',
 		},
 
-		// Pass the Yup schema to validate the form
 		validationSchema: schema,
 
-		// Handle form submission
-		onSubmit: async ({ name, email, password }) => {
-			// Make a request to your backend to store the data
-		},
+		onSubmit: async ({ name, email, password }) => {},
 	})
-	// Destructure the formik object
 	const { errors, touched, values, handleChange, handleSubmit } = formik
 
 	return (
 		<Layout>
-			<h1>Страница Авторизации</h1>
+			<h1>Регистрация</h1>
 			<div className={styles.wrapper}>
 				<form
 					onSubmit={handleSubmit}
 					method="POST"
 					className={styles.formAuth}
+					action="/api/register"
 				>
 					<label htmlFor="name">Name</label>
 					<input
