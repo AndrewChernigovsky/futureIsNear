@@ -107,7 +107,7 @@
 		}
 
 		li a {
-			@include grid($justifyI: center, $alignI: center);
+			@include flex($justifyI: center, $alignI: center, $direction: column);
 			font-size: 12px;
 
 			@media screen and (min-width: $middle) {

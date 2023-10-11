@@ -22,7 +22,7 @@
 	&__wrapper {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 60% min-content;
+		grid-template-rows: 200px min-content;
 		@include HWidth-MPadding-br($min-height: 300px, $width: 100%);
 	}
 	cursor: pointer;
