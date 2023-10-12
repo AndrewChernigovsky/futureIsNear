@@ -8,7 +8,6 @@ import Pagination from '@/components/globals/Pagination/Pagination'
 import { useState } from 'react'
 import paginate from '@/components/globals/Pagination/paginate'
 import CatalogCard from '@/components/globals/CatalogCard/CatalogCard'
-import { categoryT } from '@/components/globals/types/CatalogType'
 
 const Premium: NextPage = () => {
 	let allCategory = characteristics[0].premium.categories
@@ -29,7 +28,7 @@ const Premium: NextPage = () => {
 				<h1>Бренды</h1>
 
 				<div className={styles.products}>
-					{paginatedPosts.map((product: categoryT) => {
+					{paginatedPosts.map((product: any) => {
 						return (
 							<CatalogCard
 								image={product.path!}
