@@ -6,3 +6,9 @@ type TUser = {
 	role: string
 	password: string
 } | null
+
+type TCard = {
+	image: string
+	title: string
+	price: number
+}

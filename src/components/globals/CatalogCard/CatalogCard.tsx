@@ -3,12 +3,6 @@ import styles from './CatalogCart.module.scss'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BiLike } from 'react-icons/bi'
 
-type TCard = {
-	image: string
-	title: string
-	price: number
-}
-
 const CatalogCard: FC<TCard> = ({ image, title, price }) => {
 	return (
 		<div className={styles.card}>

@@ -19,7 +19,6 @@ const Sidebar: FC = () => {
 	const pathname = usePathname()
 	return (
 		<aside className={styles.sidebar}>
-			{' '}
 			<ul className={styles.sidebar__wrapper}>
 				{categories.map((el: ICategory, index) => {
 					return (

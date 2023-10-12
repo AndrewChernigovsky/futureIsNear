@@ -71,7 +71,7 @@ const authPage: NextPage = () => {
 						<span>{errors.password}</span>
 					)}
 
-					<button type="submit">Submit</button>
+					<button>Submit</button>
 				</form>
 			</div>
 		</Layout>
