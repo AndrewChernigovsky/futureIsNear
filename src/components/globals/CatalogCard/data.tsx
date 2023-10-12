@@ -1,24 +1,9 @@
 import React from 'react'
 import { AiOutlineLogin } from 'react-icons/ai'
 import { v4 as id } from 'uuid'
-import { categoriesT } from '../types/CatalogType'
 
 export const characteristics: {
-	electronics: {
-		categories: categoriesT
-	}
-	garden: {
-		categories: categoriesT
-	}
-	clothes: {
-		categories: categoriesT
-	}
-	premium: {
-		categories: categoriesT
-	}
-	food: {
-		categories: categoriesT
-	}
+	[key: string]: { categories: any }
 }[] = [
 	{
 		electronics: {
