@@ -1,9 +1,10 @@
+'use client'
 import { FC } from 'react'
 import styles from './Sidebar.module.scss'
 import React from 'react'
 import Link from 'next/link'
 import { categories } from './data'
-import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 interface ICategory {
 	href: string
@@ -14,15 +15,11 @@ interface ICategory {
 	desc: string
 }
 
-interface Props {
-	active: boolean
-}
-const Sidebar: FC<Props> = (active: Props) => {
-	const router = useRouter()
-	let conditionalColor = active ? 'red' : 'blue'
+const Sidebar: FC = () => {
+	const pathname = usePathname()
 	return (
 		<aside className={styles.sidebar}>
-			<p>{router.path}</p>
+			{' '}
 			<ul className={styles.sidebar__wrapper}>
 				{categories.map((el: ICategory, index) => {
 					return (
@@ -30,7 +27,10 @@ const Sidebar: FC<Props> = (active: Props) => {
 							<Link href={el.href}>
 								{el.image(
 									(el.size = 25),
-									(el.color = conditionalColor),
+									(el.color =
+										pathname === el.href
+											? 'orange'
+											: 'white'),
 								)}
 								<span className="visually-hidden">
 									{el.desc}

@@ -14,7 +14,7 @@ const Layout: FC<ILayout> = ({ children, showSidebar }) => {
 		<>
 			<div className={styles.wrapper}>
 				<Header />
-				{showSidebar ? <Sidebar active /> : ''}
+				{showSidebar ? <Sidebar /> : ''}
 				<main className={styles.container}>{children}</main>
 				<Footer />
 			</div>
