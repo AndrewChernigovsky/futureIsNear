@@ -35,13 +35,13 @@
 	&__wrapper {
 		min-height: 60%;
 		display: grid;
-		color: blue;
+		color: $blue;
+		justify-content: center;
 
 		@media screen and (min-width: $middle) {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-evenly;
-			// align-items: center;
 		}
 
 		li a {
@@ -54,13 +54,20 @@
 			font-size: 16px;
 			font-weight: 600;
 			text-align: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: $white;
+			justify-content: center;
+			align-content: center;
 
 			@media screen and (min-width: $middle) {
 				color: $white;
-
+				width: auto;
+				height: auto;
 				span {
 					display: block;
-					color: blue;
+					color: $blue;
 					position: static;
 					height: 100%;
 					width: 100%;
@@ -81,12 +88,6 @@
 				outline: none;
 				border: 2px solid $blue;
 				border-radius: 5px;
-			}
-
-			svg {
-				@media screen and (min-width: $middle) {
-					fill: $blue;
-				}
 			}
 		}
 	}

@@ -29,9 +29,17 @@ const Sidebar: FC = () => {
 									(el.color =
 										pathname === el.href
 											? 'orange'
-											: 'white'),
+											: 'blue'),
 								)}
-								<span className="visually-hidden">
+								<span
+									className="visually-hidden"
+									style={{
+										color:
+											pathname === el.href
+												? 'orange'
+												: 'blue',
+									}}
+								>
 									{el.desc}
 								</span>
 							</Link>
